@@ -1,5 +1,6 @@
 ## Fichier Vagrant TP
 # /!\ Les lignes 16, 26, et 28 sont à modifier selon vos chemins et les noms de vos fichiers 
+
 Vagrant.require_version '>=2.2.10'
 
 Vagrant.configure('2') do |config|
@@ -20,6 +21,22 @@ Vagrant.configure('2') do |config|
         ansible.vm.network 'private_network', ip: '10.20.30.10'
   end
 
+  config.vm.define "node_01" do |node_01|
+  	node_01.vm.hostname = 'node-01.workshop'
+  	node_01.vm.network 'private_network', ip: '10.20.30.11'
+  end
+
+  config.vm.define "node_02" do |node_02|
+  	node_01.vm.hostname = 'node-02.workshop'
+  	node_01.vm.network 'private_network', ip: '10.20.30.12'
+  end
+
+  config.vm.define "node_03" do |node_03|
+  	node_01.vm.hostname = 'node-03.workshop'
+  	node_01.vm.network 'private_network', ip: '10.20.30.13'
+  end
+
+
   config.vm.box = 'bento/debian-10'
 
   #SSH KEYS
@@ -27,7 +44,6 @@ Vagrant.configure('2') do |config|
   config.vm.provision "shell", inline: <<-SHELL
   	cat /home/vagrant/.ssh/yubikey.pub >> /home/vagrant/.ssh/authorized_keys 
   SHELL
-
 
 
   #VM - Virtualbox

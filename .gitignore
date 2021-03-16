@@ -1,0 +1,17 @@
+.vagrant/machines/ansible/virtualbox/action_provision
+.vagrant/machines/ansible/virtualbox/action_set_name
+.vagrant/machines/ansible/virtualbox/box_meta
+.vagrant/machines/ansible/virtualbox/creator_uid
+.vagrant/machines/ansible/virtualbox/id
+.vagrant/machines/ansible/virtualbox/index_uuid
+.vagrant/machines/ansible/virtualbox/synced_folders
+.vagrant/machines/ansible/virtualbox/vagrant_cwd
+.vagrant/machines/node01/virtualbox/action_provision
+.vagrant/machines/node01/virtualbox/action_set_name
+.vagrant/machines/node01/virtualbox/box_meta
+.vagrant/machines/node01/virtualbox/creator_uid
+.vagrant/machines/node01/virtualbox/id
+.vagrant/machines/node01/virtualbox/index_uuid
+.vagrant/machines/node01/virtualbox/synced_folders
+.vagrant/machines/node01/virtualbox/vagrant_cwd
+.vagrant/rgloader/loader.rb
