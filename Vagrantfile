@@ -1,4 +1,5 @@
-## Fichier Vagrant TP 
+## Fichier Vagrant TP
+# /!\ Les lignes 16, 26, et 28 sont à modifier selon vos chemins et les noms de vos fichiers 
 Vagrant.require_version '>=2.2.10'
 
 Vagrant.configure('2') do |config|
@@ -12,7 +13,7 @@ Vagrant.configure('2') do |config|
   # VMS
   config.vm.define "ansible" do |ansible|
         ansible.vm.hostname = 'ansible.workshop'
-        ansible.vm.synced_folder '/home/alban/testing/vagrant_shared_folder', '/srv/app',  #Chemin à modifier selon votre cas
+        ansible.vm.synced_folder '/home/alban/testing/vagrant_shared_folder', '/srv/app',
             type: 'nfs',
             mount_options: ['tcp', 'nolock', 'actimeo=1'],
   	    nfs_udp: 'false'
@@ -22,9 +23,9 @@ Vagrant.configure('2') do |config|
   config.vm.box = 'bento/debian-10'
 
   #SSH KEYS
-  config.vm.provision "file", source: "~/.ssh/id_yubikey.pub", destination: "~/.ssh/yubikey.pub" # Même chose ici
+  config.vm.provision "file", source: "~/.ssh/id_yubikey.pub", destination: "~/.ssh/yubikey.pub" 
   config.vm.provision "shell", inline: <<-SHELL
-  	cat /home/vagrant/.ssh/yubikey.pub >> /home/vagrant/.ssh/authorized_keys  # Pareil ici
+  	cat /home/vagrant/.ssh/yubikey.pub >> /home/vagrant/.ssh/authorized_keys 
   SHELL
 
 
