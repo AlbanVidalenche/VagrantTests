@@ -27,13 +27,13 @@ Vagrant.configure('2') do |config|
   end
 
   config.vm.define "node_02" do |node_02|
-  	node_01.vm.hostname = 'node-02.workshop'
-  	node_01.vm.network 'private_network', ip: '10.20.30.12'
+  	node_02.vm.hostname = 'node-02.workshop'
+  	node_02.vm.network 'private_network', ip: '10.20.30.12'
   end
 
   config.vm.define "node_03" do |node_03|
-  	node_01.vm.hostname = 'node-03.workshop'
-  	node_01.vm.network 'private_network', ip: '10.20.30.13'
+  	node_03.vm.hostname = 'node-03.workshop'
+  	node_03.vm.network 'private_network', ip: '10.20.30.13'
   end
 
 
