@@ -14,9 +14,6 @@ Vagrant.configure('2') do |config|
   # VMS
   config.vm.define "ansible" do |ansible|
         ansible.vm.hostname = 'ansible.workshop'
-        ansible.vm.synced_folder '/home/alban/testing/vagrant_shared_folder', '/srv/app',
-            type: 'nfs',
-            mount_options: ['tcp', 'nolock', 'actimeo=1']
         ansible.vm.provision "shell",
             inline: "apt-get update && apt-get install -y ansible"
         ansible.vm.network 'private_network', ip: '10.20.30.10'
